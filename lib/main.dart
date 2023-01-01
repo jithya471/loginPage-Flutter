@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
               flex: 3,
               child: Container(
                 // height: 150,
+
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.bottomLeft,
@@ -30,6 +31,40 @@ class MyApp extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(50),
                   ),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 70.0),
+                        child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CircleAvatar(
+                                backgroundImage:
+                                    AssetImage('images/logoImage.jpg'),
+                              ),
+                            ]),
+                      ),
+                    ),
+                    Expanded(
+                        child: Padding(
+                      padding: const EdgeInsets.only(right: 50.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Login',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ))
+                  ],
                 ),
               ),
             ),
@@ -111,25 +146,47 @@ class MyApp extends StatelessWidget {
                   ),
                 )),
             Expanded(
-              flex: 2,
-              child: Container(
-                // width: 200,
-                // height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  gradient: LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [Colors.orangeAccent, Colors.deepOrange]),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextButton(
-                    child: Text(
-                      'LOGIN',
-                      style: TextStyle(color: Colors.white),
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Container(
+                  // width: 200,
+                  // height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    gradient: LinearGradient(
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                        colors: [Colors.orangeAccent, Colors.deepOrange]),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(
+                      child: Text(
+                        'LOGIN',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
                     ),
-                    onPressed: () {},
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: RichText(
+                  text: TextSpan(
+                    text: "Don't have an account? ",
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(
+                          text: ' Register',
+                          style: TextStyle(color: Colors.deepOrange)),
+                    ],
                   ),
                 ),
               ),
